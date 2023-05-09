@@ -1,4 +1,5 @@
 # Ridani_project
+This is the branch that I created it!!
 
 Hello Everyone my name is Daniel Ridani. I am a phd student in Polytechnique Montreal. I am currently working on separating susceptibility-sources in the brain. At this is stage I am focusing on doing this using simulations of phatoms. I am super excited to be part of this course.
 ## Thank you
