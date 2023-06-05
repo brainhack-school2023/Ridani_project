@@ -51,6 +51,7 @@ A summary of the susceptibility values is as follows:
 |Grey Matter     |0.02              |
 |CSF             |0.019             |
 
+Table 1: Susceptibility values of different brain region
 ### Project Deliverables
 
 At the end of this project, we will have:
@@ -59,48 +60,35 @@ At the end of this project, we will have:
 - Executable pyhton scipts for data visualization and analysis.
 - Markdown file providing comprehensive project details.
 
+## Method
+
+### Phantoms
+
+To generate the phantoms used in this study, two experiments were performed:
+- The first experiment involved assigning variable values to each voxel within a specific region, with the mean value ± standard deviation being used for analysis. 
+- The second experiment, a uniform value was assigned to every voxel within the same region.
+This approach will help reduce the complexity of the phantom model to see if the complexitity of the phantom is a limitation of χ-separation.
+
+### χ-separation input
+
+χ-separation requires three main inputs:
+
+- Magnitude image.
+ 
+- Frequency shift (Δf): This map can be obtained by the phase image after we apply couple of precossing steps that will be explained in the next section.
+- R<sup>\'</sup><sub>2</sub> map (R<sup>\'</sup><sub>2</sub>  = R<sup>\*</sup><sub>2</sub>  - R<sub>2</sub> ): In order to obtain an R<sup>\'</sup><sub>2</sub> map, you will need to follow these steps. First, acquire two different scan sequences: Gradient-echo (GRE) and Spin-echo (SE). From each sequence, generate magnitude images. Next, perform an exponential fitting on the magnitude images separately. This will provide you with T<sup>\*</sup><sub>2</sub> and T<sub>2</sub> maps for the GRE and SE sequences, respectively.
+To calculate R<sup>\*</sup><sub>2</sub>, take the inverse of T<sup>\*</sup><sub>2</sub> (denoted as <sup>1</sup>&frasl;<sub>T<sup>\*</sup><sub>2</sub></sub>). Similarly, calculate R<sub>2</sub> by taking the inverse of T<sub>2</sub> (denoted as 1 / <sup>1</sup>&frasl;<sub>T<sub>2</sub></sub>). Finally, obtain R<sup>\'</sup><sub>2</sub> by subtracting R<sub>2</sub> from R<sup>\*</sup><sub>2</sub>.
+
+
+### Pipeline and preprocessing
+<img src="Images/Pipeline.png">
+Figure 1: Reconstruction pipeline from raw data to χ-separation<br><br><br>
+
+Figure 1 represent the entire pipeline used in order to get two separated images of iron and myelin. The custom phantom (χ<sup>Total</sup><sub>Simulated</sub>) is simulated into GRE data to give a magnitude and phase images. The magnitude image is used to extract a binary mask to identify the region of intereset and a R<sup>\*</sup><sub>2</sub>. Since χ-separation requires a R<sup>\'</sup><sub>2</sub> map and the simulation only provide GRE data an aproximation adapted from Alexey V. Dimov et al was used to estimate the R<sup>\'</sup><sub>2</sub> map. In his work he found a strong correlation between R<sup>\*</sup><sub>2</sub> and R<sup>\'</sup><sub>2</sub> maps and establish a relation between them: R<sup>\*</sup><sub>2</sub> = αR<sup>\'</sup><sub>2</sub>. Afterwards a phase unwrapping algorithm is applied to obtain the true phase phase followed by a backgrounf field removal to remove the induced background field from the region of inetereset and finally a dipole inversion technique is applied to estimate the local susceptibility. At this point we apply the χ-separation algorithm to separate the positive (χ<sup>Positive</sup><sub>Measured</sub>)and negative (χ<sup>Negative</sup><sub>Measured</sub>) susceptibilities. Finally, the positive and negative susceptibility maps are combined to obtain the total susceptibility (χ<sup>Total</sup><sub>Measured</sub>) , which will be used for comparing the total susceptibility before and after χ-separation.
+
 ## Results
+### Phatoms
 
-### Progress overview
-
-The project was swiftly initiated by P Bellec, based on the existing template created in 2019 by Tristan Glatard and improved by different students. It was really not that hard. Community feedback is expected to lead to rapid further improvements of this first version.
-
-### Tools I learned during this project
-
- * **Meta-project** P Bellec learned how to do a meta project for the first time, which is developping a framework while using it at the same time. It felt really weird, but somehow quite fun as well.
- * **Github workflow-** The successful use of this template approach will demonstrate that it is possible to incorporate dozens of students presentation on a website collaboratively over a few weeks.
- * **Project content** Through the project reports generated using the template, it is possible to learn about what exactly the brainhack school students are working on.
-
-### Results
-
-#### Deliverable 1: report template
-
-You are currently reading the report template! I will let you judge whether it is useful or not. If you think there is something that could be improved, please do not hesitate to open an issue [here](https://github.com/PSY6983-2021/project_template/issues/) and let us know.
-
-#### Deliverable 2: project gallery
-
-You can check out the [2020 BrainHack School project gallery](https://psy6983.brainhackmtl.org/project/)
-
-##### ECG pupilometry pipeline by Marce Kauffmann
-
-The repository of this project can be found [here](https://github.com/mtl-brainhack-school-2019/ecg_pupillometry_pipeline_kaufmann). The objective was to create a processing pipeline for ECG and pupillometry data. The motivation behind this task is that Marcel's lab (MIST Lab @ Polytechnique Montreal) was conducting a Human-Robot-Interaction user study. The repo features:
- * a [video introduction](http://www.youtube.com/watch/8ZVCNeX42_A) to the project.
- * a presentation [made in a jupyter notebook](https://github.com/mtl-brainhack-school-2019/ecg_pupillometry_pipeline_kaufmann/blob/master/BrainHackPresentation.ipynb) on the results of the project.
- * Notebooks for all analyses.
- * Detailed requirements files, making it easy for others to replicate the environment of the notebook.
- * An overview of the results in the markdown document.
-
-##### Other projects
-Here are other good examples of repositories:
-- [Learning to manipulate biosignals with python](https://github.com/mtl-brainhack-school-2019/franclespinas-biosignals) by François Lespinasse
-- [Run multivariate anaylysis to relate behavioral and electropyhysiological data](https://github.com/mtl-brainhack-school-2019/PLS_PV_Behaviour)
-- [PET pipeline automation and structural MRI exploration](https://github.com/mtl-brainhack-school-2019/rwickens-sMRI-PET) by Rebekah Wickens
-- [Working with PSG [EEG] data from Parkinson's patients](https://github.com/mtl-brainhack-school-2019/Soraya-sleep-data-in-PD-patients) by Cryomatrix
-- [Exploring Brain Functional Activation in Adolescents Who Attempted Suicide](https://github.com/mtl-brainhack-school-2019/Anthony-Gifuni-repo) by Anthony Gifuni
-
-#### Deliverable 3: Instructions
-
- To be made available soon.
 
 ## Conclusion 
 
