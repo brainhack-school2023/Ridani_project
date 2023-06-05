@@ -1,32 +1,63 @@
-<p align="center">
 
-</p>
+<img src="Images/Cover_image.png">
 
-## Project definition
 
-### Background
 
-Inspired by the [Recurse Centre](https://www.recurse.com/) initiative (formally known as the "hacker school"), Brainhack School was established in 2018 with the mission to train students from multidisciplinary backgrounds to a panoply of reproducible tools for neural data science, using a project-based approach. Following an initial 3-weeks long pilot, a 4th week was added with an intensive bootcamp, so that students could choose what tools to learn more deeply in their projects. As the course became integrated in standard curriculum at different universities, the formula seemed to be working. In order to streamline the different stages of the project, some standard template and milestones needed to be incorporated in a github-based workflow. The "project template" project (which is also our first BHS meta-project) aims at establishing such a standardized template. You can check the following [video](https://youtu.be/PTYs_JFKsHI) where Pierre Bellec gives an overview of the Brainhack school.
+# Validation χ-separation using phantom simulations
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PTYs_JFKsHI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## About Me
+![Screenshot 2023-04-14 150759](https://github.com/brainhack-school2023/Ridani_project/assets/77506715/787adb2e-bd57-41fa-b1b1-ef0e2da9c4b1)
+
+Hello everyone, my name is Daniel Ridani. I am a first-year PhD student at Polytechnique Montreal, majoring in biomedical engineering. I did my Bachelor's in general physics and my Masters in biomedical engineering, where I fell in love with this field and decided to pursue a PhD. Currently, I am working on quantitative MRI, specifically quantitative susceptibility mapping (QSM). In my research, I focus on studying the susceptibility contributions from iron and myelin and developing methods to effectively separate them. Brain Hack School has given me the opportunity to improve my Python skills and explore new topics such as deep learning and machine learning.
+
+## Project Summary
+
+### Introduction
+
+My project aims to validate χ-separation algorithm using realistic in silico head phantom simulation. Susceptibility denoted as (χ), is a measure of how easily a material can be magnetized in response to an external magnetic field. Positive susceptibility implies that the material aligns its magnetization parallel to the main field, while negative susceptibility indicates an opposing alignment. The main two sources of χ are myelin (χ<0) and iron (χ>0) and they co-exist in almost every region in the human brain. Using the χ we can generate maps known as Quantitative susceptibility mapping (QSM) which does not have a ground truth. In the absence of ground truth for QSM, effort have been made (QSM reconstruction challenge 2.0) to create a phantom that can serve as a reference standard for validation. QSM measure the total χ rather than the distinct positive and negative χ sources, hence, to address this, χ-separation techniques, are employed to separate the two χ sources. The aforementioned phantom can be utilized to validate the accuracy of the χ-separation results.
+
+### Main Objectives
+- Get more familiar with χ-separation limitation.
+- Validate χ-separation algorithm using ground truth data (phantom simulations).
+- Implement python scripts to analyze and visualize the results.
+- Create a GitHub repo to share my results.
+
+### Personal Objectives
+- Gain a deeper undersating of susceptibility contribution in the human brain.
+- Develop the skill to manage a small project in a short period of time.
+- Improve my programming skill using the BrainHack school modules.
+- Share my knowlege with other to encourge open science.
 
 ### Tools
-
-The "project template" project will rely on the following technologies:
- * Markdown, to structure the text.
- * The Hugo website framework which is used by the BHS website. This makes it possible to easily add the markdown project description to the website.
- * Adding the project to the website relies on github, through pull requests.
-
+- χ-separation GUI developped by Hyeong-Geol Shin et al.
+- QSM reconstruction challenge 2.0 code for GRE simulations of custom phantoms.
+- Git and Github for Version Control
+- Pyhton Packages: "matplotlib", "seaborn", "pandas"
 ### Data
+The dataset used in this study was simulated using the matlab code from QSM reconstruction challenge 2.0 article developed by José P.Marques et al. This artciles also provided susceptibility values for 10 different region in the brain.
 
-Ultimately, the project template will be used by all BHS participants. Data on the different projects will be aggregareted on the [following page](https://psy6983.brainhackmtl.org/project). This will serve as an additional example gallery in the years to come for future brainhack school students. Many reports from [BHS 2020](https://github.com/brainhack-school2020) already used this template.
+A summary of the susceptibility values is as follows:
 
-### Deliverables
+|Brain Regions |Susceptibility (ppm)|
+|:---------------|:----------------:|
+|Caudate Nucleus |0.044             |
+|Globus Pallidus |0.1305            |
+|Putamen         |0.038             |
+|Red Nucleus     |0.1               |
+|Dentate Nucleus |0.152             |
+|Substania Nigra |0.111             |
+|Thalamus        |0.02              |
+|White Matter    |-0.03             |
+|Grey Matter     |0.02              |
+|CSF             |0.019             |
+
+### Project Deliverables
 
 At the end of this project, we will have:
- - The current markdown document, completed and revised.
- - A gallery of the student projects at Brainhack 2020.
- - Instructions on the website about how to submit a pull request to the [brainhack school website](https://github.com/PSY6983-2021) in order to add the project description to the website.
+- A pahntom for χ-separation used as a ground truth.
+- Detailed project workflow documented in a GitHub repository.
+- Executable pyhton scipts for data visualization and analysis.
+- Markdown file providing comprehensive project details.
 
 ## Results
 
@@ -71,8 +102,16 @@ Here are other good examples of repositories:
 
  To be made available soon.
 
-## Conclusion and acknowledgement
+## Conclusion 
 
-The BHS team hope you will find this template helpful in documenting your project. Developping this template was a group effort, and benefitted from the feedback and ideas of all BHS students over the years.
+### How can we validate χ-separation algorithm?
 
-You can also make submit your project to neurolibre https://neurolibre.org/. It is a preprint server for interactive data analyses. It is tailored for publishing interactive neuroscience notebooks that can seamlessly integrate data, text, code and figures.The submission instructions can be found here https://docs.neurolibre.org/en/latest/index.html and the jupyter book docs there https://jupyterbook.org/intro.html.
+
+### Objectives, Tools, and Deliverables
+
+
+### Detailed guide to Reproducibility
+
+## Acknowledgments
+
+## References
