@@ -160,6 +160,8 @@ Now we have 3 images chiref saved as `Chi.nii`, chipos saved as `ChiPos.nii` and
 
 In order to create susceptibility maps and other maps that have constant regions like I did in this project you can use this pyhton code [here](https://github.com/brainhack-school2023/Ridani_project/blob/main/Scripts/Make_uniform_chi.py) to create uniform susceptibility maps and this code [here](https://github.com/brainhack-school2023/Ridani_project/blob/main/Scripts/Make_uniform_maps.py) to create other uniform maps that you will need in this work.
 
+The final step is to make plot like the one i showed in the results section. In order to to this you will have first to download this .csv file [here]() that will contain all the values used to plot the figures and you can find the code [here]() which a Jupyter Notebook code.
+
 
 ## Acknowledgments
 I would like to thank the Brank Hack School 2023 for organizing this course and for their support. The course has been highly beneficial, and I would like to express my appreciation to Dr. Eva Alonso Ortiz for delivering excellent instruction.
