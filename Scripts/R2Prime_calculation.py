@@ -9,7 +9,8 @@
 #     Path to T2* file
 # save_path : str
 #     Path to save the results
-####################################import numpy as np
+####################################
+import numpy as np
 import nibabel as nib
 
 # Load the input images
