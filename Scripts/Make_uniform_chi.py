@@ -16,7 +16,7 @@ import nibabel as nib
 import numpy as np
 
 # Load the NIfTI segmentation file
-seg_file = 'C:/Users/Daniel Ridani/Desktop/Chi-separation/Simulation/data/masks/SegmentedModel.nii.gz'
+seg_file = 'Path/to/SegmentedModel.nii.gz'
 seg_img = nib.load(seg_file)
 seg_data = seg_img.get_fdata()
 
