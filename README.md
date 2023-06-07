@@ -96,6 +96,7 @@ Figure 2 represents the phantom maps that will be used as groud truth. This figu
 ### χ-separation 
 #### Qualitative assessment<br><br>
 <img src="Images/x-separation.png">
+Figure 3:
 
 #### Quantitative assessment<br><br>
 <img src="Images/plots.png">
