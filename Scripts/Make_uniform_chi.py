@@ -1,3 +1,17 @@
+####################################
+# Filename: Make_uniform_chi.py
+# Author: Daniel Ridani 
+#
+# Description: Script to make a uniform map of susceptibility. which means that within a region all voxel has the exact same value.
+# Inputs
+# ----------
+# data_path : str
+#     Path to the segmented model nifti file provided in simulation file.
+# susceptibility values: float
+#     Add your custimzed value for each region.
+# save_path : str
+#     Path to save the results
+####################################
 import nibabel as nib
 import numpy as np
 
@@ -8,22 +22,22 @@ seg_data = seg_img.get_fdata()
 
 # Define the region values lookup table
 region_values = {
-    1: 0.0088,
-    2: 0.0131,
-    3: 0.0057,
-    4: 0.025,
-    5: 0.01,
-    6: 0.008,
-    7: 0.007,
-    8: 0.0315,
-    9: 0.001,
-    10: 0,
-    11: 0,
-    12: 0,
-    13: 0,
-    14: 0,
-    15: 0,
-    16: 0
+    1: value1,
+    2: value2,
+    3: value3,
+    4: value4,
+    5: value5,
+    6: value6,
+    7: value7,
+    8: value8,
+    9: value9,
+    10: value10,
+    11: value11,
+    12: value12,
+    13: value13,
+    14: value14,
+    15: value15,
+    16: value16
 }
 
 # Assign values to each region in the segmentation
@@ -36,7 +50,7 @@ for region_num in range(1, 17):
 modified_seg_img = nib.Nifti1Image(seg_data, seg_img.affine, seg_img.header)
 
 # Save the modified NIfTI segmentation file
-modified_seg_file = 'C:/Users/Daniel Ridani/Desktop/Chi-separation/Simulation/data/masks/chineg_no_variation.nii.gz'
+modified_seg_file = 'Add/path/to/save/results'
 nib.save(modified_seg_img, modified_seg_file)
 
 print("Modified segmentation file saved successfully.")
