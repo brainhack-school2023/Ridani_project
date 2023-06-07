@@ -94,11 +94,11 @@ Figure 2: Phantom maps of variable and uniform assessments of brain region value
 Figure 2 represents the phantom maps that will be used as groud truth. This figures presentes two sets of maps: the first (a, b and c) having a variable assessments of brain region values and the second (d, e and f) having a uniform assessement of brain region values. Each image in the left set of images  corresponds to an image in the right set, sharing comparable contrast characteristics. Thus the same colobar was used for the two sets of images. This figure presented in this study exemplifies the comparative analysis of variable and uniform assessments. The findings of these experiments will shed light on the limitations of χ-separation when it comes to the complexity of the used model.
 
 ### χ-separation 
-#### Qualitative assessment
+#### Qualitative assessment<br><br>
 <img src="Images/x-separation.png">
 
-#### Quantitative assessment
-
+#### Quantitative assessment<br><br>
+<img src="Images/plots.png">
 
 ## Conclusion 
 
