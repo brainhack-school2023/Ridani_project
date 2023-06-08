@@ -178,6 +178,8 @@ Marques, José P., et al. "QSM reconstruction challenge 2.0: A realistic in sili
 
 Krebs, Nikolaus, et al. "Assessment of trace elements in human brain using inductively coupled plasma mass spectrometry." Journal of Trace Elements in Medicine and Biology 28.1 (2014): 1-7.
 
+Dimov, Alexey V., et al. "Susceptibility source separation from gradient echo data using magnitude decay modeling." Journal of Neuroimaging 32.5 (2022): 852-859.
+
 Waskom, M. Seaborn: Statistical Data Visualization. Retrieved from https://seaborn.pydata.org/
 
 Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science & Engineering, 9(3), 90-95. https://doi.org/10.1109/MCSE.2007.55
