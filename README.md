@@ -3,7 +3,7 @@
 
 
 
-# Validation χ-separation using phantom simulations
+# Validating χ-separation using phantom simulations
 
 ## About Me
 ![Screenshot 2023-04-14 150759](https://github.com/brainhack-school2023/Ridani_project/assets/77506715/787adb2e-bd57-41fa-b1b1-ef0e2da9c4b1)
